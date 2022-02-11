@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import Movies from './components/Movies';
+import axios from "axios";
+import { useState,useEffect } from 'react';
 
 function App() {
+
+
+  const [movies, setMovies] = useState([]);
+
+  
+  useEffect(() => {
+    GetPopular();
+  }, []);
+
+  const GetPopular = async () => {
+    const data = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=8433cf99d057dc015d472aaa543637c0&language=en-US&page=1")
+    const movies = await data.data.results;
+    
+    setMovies(movies);
+  }
+
+
+  
+  
+  console.log(movies)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="menu">
+        <h1>Movie App</h1>
+
+      </div>
+      <div className="movies">
+      {
+        movies.map((movie,index) => (<Movies key={movie.id} movie={movie}/>))
+      }
+      </div>
     </div>
   );
 }
