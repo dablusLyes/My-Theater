@@ -4,13 +4,27 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
-.app-title{
-  text-align: center;
-  margin: 1% 0;
+
+
+
+
+.nav-bar{
+  background-image: linear-gradient(grey, white);
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
-.app{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
+.nav-buttons a{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px;
+  margin: 0 20px;
 }
 
 .movies{

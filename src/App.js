@@ -27,7 +27,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="app-title">My Theater</h1>
+      <div className="nav-bar">
+        <h1 className="app-title">My Theater</h1>
+
+        <div className="nav-buttons">
+          <a href="">popular movies</a>
+          <a href="">Releases</a>
+        </div>
+      </div>
+      
       <div className="menu">
         <h1>Movie App</h1>
       </div>
