@@ -3,9 +3,9 @@
 const Movies = ({ movie }) => {
     return (
         <div className="movie">
-            <h3 className="movie-title">{movie.title}</h3>
+            <h2 className="movie-title">{movie.title}</h2>
             <img className="movie-image" src={'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path} alt="" />
-            <p className="movie-overview">{movie.overview}</p>
+            {/* <p className="movie-overview">{movie.overview}</p> */}
         </div>
     )
 }

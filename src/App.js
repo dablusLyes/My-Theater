@@ -27,16 +27,15 @@ function App() {
 
   return (
     <div className="App">
-
+      <h1 className="app-title">My Theater</h1>
       <div className="menu">
         <h1>Movie App</h1>
+      </div>
 
-      </div>
       <div className="movies">
-      {
-        movies.map((movie,index) => (<Movies key={movie.id} movie={movie}/>))
-      }
+        {movies.map((movie,index) => (<Movies key={movie.id} movie={movie}/>))}
       </div>
+    
     </div>
   );
 }
