@@ -36,9 +36,9 @@ function App() {
         </div>
       </div>
       
-      <div className="menu">
+      {/* <div className="menu">
         <h1>Movie App</h1>
-      </div>
+      </div> */}
 
       <div className="movies">
         {movies.map((movie,index) => (<Movies key={movie.id} movie={movie}/>))}

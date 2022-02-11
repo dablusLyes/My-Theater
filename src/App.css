@@ -7,15 +7,15 @@ body{
 
 
 
-
 .nav-bar{
-  background-image: linear-gradient(grey, white);
+  background-image: linear-gradient(rgb(173, 173, 173), white);
   padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 70px;
+  margin-bottom: 50px;
 }
 
 .nav-buttons a{
@@ -24,15 +24,17 @@ body{
   font-size: 20px;
   font-weight: 500;
   padding: 20px;
-  margin: 0 20px;
 }
-
+a:hover{
+  color: rgb(165, 29, 165);
+}
 .movies{
   display: grid;
   grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
   column-gap: 1rem;
   row-gap: 2rem;
   align-items: center;
+  margin: 0 70px;
 }
 .movie{
 }
@@ -42,10 +44,19 @@ img{
   object-fit: cover;
   border-radius: 1rem;
   margin-bottom: 1rem;
+  box-shadow: 0px 0px 10px rgb(0, 0, 0, 0.5);
 }
 
-img:hover{
+.movie-description{
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+.img-info:hover{
+  visibility: visible;
   transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+  filter: brightness(0.7);
 }
 .movie-title{
   text-align: center;
@@ -54,4 +65,23 @@ img:hover{
 
 h2{
   font-size: 0.8rem;
+}
+
+.img-info{
+  position: relative;
+}
+.note{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+}
+.note span{
+  font-size: 2rem;
+}
+.green_note{
+  color: green;
+}
+.red_note{
+  color: red;
 }
