@@ -1,10 +1,11 @@
 import './App.css';
-import Movies from './components/Movies';
+import Navbar from './components/Navbar';
+import Movies from './components/Movie';
 import axios from "axios";
 import { useState,useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-
 
   const [movies, setMovies] = useState([]);
 
@@ -16,35 +17,18 @@ function App() {
   const GetPopular = async () => {
     const data = await axios.get("https://api.themoviedb.org/3/movie/popular?api_key=8433cf99d057dc015d472aaa543637c0&language=en-US&page=1")
     const movies = await data.data.results;
-    
+    console.log('zebi',movies);
     setMovies(movies);
   }
-
-
   
-  
-  console.log(movies)
 
   return (
-    <div className="App">
-      <div className="nav-bar">
-        <h1 className="app-title">My Theater</h1>
-
-        <div className="nav-buttons">
-          <a href="">popular movies</a>
-          <a href="">Releases</a>
-        </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Movies Movies={movies}/>
       </div>
-      
-      {/* <div className="menu">
-        <h1>Movie App</h1>
-      </div> */}
-
-      <div className="movies">
-        {movies.map((movie,index) => (<Movies key={movie.id} movie={movie}/>))}
-      </div>
-    
-    </div>
+    </Router>
   );
 }
 
