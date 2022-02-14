@@ -2,7 +2,7 @@ import Movie from './Movie'
 const Movies = (movies) => {  
     return (
         <div className="movies">
-          {movies.map((movie,index) => (<Movie key={movie.id} movie={movie}/>))}
+          {movies.map((movie) => (<Movie key={movie.id} movie={movie}/>))}
         </div>
     )
 }

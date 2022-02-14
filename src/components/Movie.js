@@ -1,5 +1,8 @@
 
 const Movie = ({ movie }) => {
+    
+    console.log(movie);
+    
     let note_color;
     if (movie.vote_average > 5) {
         note_color = 'green'
