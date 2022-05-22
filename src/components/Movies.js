@@ -1,8 +1,11 @@
 import Movie from './Movie'
-const Movies = (movies) => {  
+const Movies = ({ movies }) => {
+  console.log(movies);
     return (
         <div className="movies">
-          {movies.map((movie,index) => (<Movie key={movie.id} movie={movie}/>))}
+        {movies.map((movie, index) => (
+          <Movie key={movie.id} movie={movie}/>
+        ))}
         </div>
     )
 }
